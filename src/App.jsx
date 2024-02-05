@@ -9,9 +9,10 @@ import About from "./code/About/About";
 import Portfolio from "./code/Portfolio/Portfolio";
 import Contact from "./code/Contact/Contact";
 import Layout from "./code/Layout/Layout";
+import NotFound from "./code/NotFound/NotFound";
 
 function App() {
-    const routers = createHashRouter([
+    const routers = createBrowserRouter([
         {
             path: "",
             element: <Layout />,
@@ -20,6 +21,7 @@ function App() {
                 { path: "portfolio", element: <Portfolio /> },
                 { path: "contact", element: <Contact /> },
                 { path: "about", element: <About /> },
+                { path: "*", element: <NotFound /> },
             ],
         },
     ]);
