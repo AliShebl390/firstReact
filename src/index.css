@@ -196,7 +196,10 @@ form label {
 }
 
 form label.top {
-    top: 0 !important;
+    top: 0px !important;
+}
+form label.bottom {
+    top: 40px !important;
 }
 
 form .btn {
@@ -206,6 +209,10 @@ form .btn {
 }
 
 form .btn:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+form .btn:focus {
     background-color: var(--main-color);
     color: white;
 }
