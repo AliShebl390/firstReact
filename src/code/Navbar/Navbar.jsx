@@ -1,11 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function Navbar() {
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+
+export default function NavBar() {
     {
         document.onreadystatechange = function () {
             let lastScrollPosition = 0;
-            const navbar = document.querySelector("nav");
+            const navbar = document.querySelector(".navbar");
 
             window.addEventListener("scroll", function () {
                 lastScrollPosition = window.scrollY;
@@ -31,26 +34,19 @@ export default function Navbar() {
     }
     return (
         <>
-            <nav className="navbar navbar-expand-lg fixed-top py-4">
-                <div className="container">
+            <Navbar
+                expand="lg"
+                className="navbar navbar-expand-lg fixed-top py-4"
+            >
+                <Container>
                     <NavLink
                         className="navbar-brand text-white text-uppercase fw-bolder fs-2 m-0"
                         to="/"
                     >
                         React
                     </NavLink>
-                    <button
-                        className="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item me-3 ">
                                 <NavLink
@@ -77,9 +73,9 @@ export default function Navbar() {
                                 </NavLink>
                             </li>
                         </ul>
-                    </div>
-                </div>
-            </nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
         </>
     );
 }
