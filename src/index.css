@@ -1,0 +1,213 @@
+:root {
+    --main-color: #1abc9c;
+    --second-color: #2c3e50;
+    color-scheme: light dark;
+}
+
+
+/*  global classes */
+/* Nav */
+nav {
+    background-color: var(--second-color);
+    transition: 400ms;
+}
+
+nav .navbar-brand,
+nav .nav-link {
+    color: white;
+}
+
+nav .navbar-brand:hover,
+nav .nav-link:hover {
+    color: white;
+}
+
+nav .nav-item .active {
+    background-color: var(--main-color);
+}
+
+nav .nav-item {
+    width: fit-content;
+}
+
+nav .padd {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+/* End Nav */
+/* Home */
+.home {
+    background-color: var(--main-color);
+    min-height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+.home .avatar {
+    width: 250px;
+}
+
+.lines .line {
+    width: 80px;
+    height: 4px;
+    background-color: white;
+}
+
+.lines {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* End Home */
+/* Footer */
+footer .card {
+    color: white;
+    background-color: var(--second-color);
+    border: none;
+}
+
+footer .card h3 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.card i {
+    border: 1px white solid;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.footer-upper {
+    background-color: #2c3e50;
+    color: #fff;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    margin: 0;
+}
+
+footer>p {
+    background-color: #1A252F;
+    padding-top: 10px;
+}
+
+/* End Footer */
+/* About */
+.about {
+    background-color: var(--main-color);
+    min-height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* End about */
+/* portfolio */
+.portfolio {
+    min-height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--second-color)
+}
+
+.portfolio>h2 {
+    font-weight: bolder;
+}
+
+.portfolio .lines .line {
+    background-color: var(--second-color);
+}
+
+.portfolio .box .content {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.portfolio .box .content:hover .layer {
+    top: 0;
+    opacity: 1;
+}
+
+.portfolio .box .layer {
+    transition: .6s opacity;
+    border-radius: 5px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    opacity: 0;
+    overflow: hidden;
+    color: white;
+    background-color: #1abc9ce6;
+}
+
+.model {
+    z-index: 90000;
+}
+
+.model img {
+    max-width: 600px;
+    width: 90%;
+}
+
+/* End portfolio */
+/* Conact */
+.contact {
+    min-height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--second-color)
+}
+
+.contact>h2 {
+    font-weight: bolder;
+}
+
+.contact .lines .line {
+    background-color: var(--second-color);
+}
+
+form .form-control:focus {
+    box-shadow: none;
+}
+
+form label {
+    color: var(--main-color);
+    transition: .6s top;
+    top: 40px !important;
+    position: relative;
+    margin-top: 10px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+form label.top {
+    top: 0 !important;
+}
+
+form .btn {
+    background-color: var(--main-color);
+    margin-top: 25px;
+    color: white;
+}
+
+form .btn:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+/* End Conact */
