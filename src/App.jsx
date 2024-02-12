@@ -18,6 +18,7 @@ function App() {
             element: <Layout />,
             children: [
                 { index: true, element: <Home /> },
+                { path: "firstReact", element: <Home /> },
                 { path: "portfolio", element: <Portfolio /> },
                 { path: "contact", element: <Contact /> },
                 { path: "about", element: <About /> },
