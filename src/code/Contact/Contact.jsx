@@ -26,7 +26,7 @@ export default function Contact() {
 
     return (
         <>
-            <div className="contact py-2 justify-content-center mb-4">
+            <div className="contact py-5 justify-content-center mb-4">
                 <h2 className="fs-1">CONTACT SECTION</h2>
                 <div className="lines">
                     <div className="line"></div>
