@@ -1,39 +1,37 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 
 export default function NavBar() {
-    {
-        document.onreadystatechange = function () {
-            let lastScrollPosition = 0;
-            const navbar = document.querySelector(".navbar");
-
-            window.addEventListener("scroll", function () {
-                lastScrollPosition = window.scrollY;
-                if (lastScrollPosition > 20) {
-                    navbar.classList.add("padd");
-                    navbar.classList.remove("py-4");
-                } else {
-                    navbar.classList.add("py-4");
-                    navbar.classList.remove("padd");
-                }
-            });
-            window.addEventListener("load", function () {
-                lastScrollPosition = window.scrollY;
-                if (lastScrollPosition > 20) {
-                    navbar.classList.add("padd");
-                    navbar.classList.remove("py-4");
-                } else {
-                    navbar.classList.add("py-4");
-                    navbar.classList.remove("padd");
-                }
-            });
-        };
+    const navRef = useRef(null);
+    let lastScrollPosition = 0;
+    function handleScroll() {
+        lastScrollPosition = window.scrollY;
+        if (lastScrollPosition > 20) {
+            navRef.current.classList.add("padd");
+            navRef.current.classList.remove("py-4");
+        } else {
+            navRef.current.classList.add("py-4");
+            navRef.current.classList.remove("padd");
+        }
     }
+    useEffect(() => {
+        lastScrollPosition = window.scrollY;
+        if (lastScrollPosition > 20) {
+            navRef.current.classList.add("padd");
+            navRef.current.classList.remove("py-4");
+        } else {
+            navRef.current.classList.add("py-4");
+            navRef.current.classList.remove("padd");
+        }
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
     return (
         <>
             <Navbar
+                ref={navRef}
                 expand="lg"
                 className="navbar navbar-expand-lg fixed-top py-4"
             >
